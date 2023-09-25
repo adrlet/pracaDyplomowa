@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+	<menu id="menubar">
+		<submenu>
+			<attribute name="label">Podgląd</attribute>
+			<section>
+				<item>
+					<attribute name="label">Postęp</attribute>
+					<attribute name="action">win.progress</attribute>
+				</item>
+				<item>
+					<attribute name="label">Błędy</attribute>
+					<attribute name="action">win.errors</attribute>
+				</item>
+				<item>
+					<attribute name="label">Operacje</attribute>
+					<attribute name="action">win.jobs</attribute>
+				</item>
+			</section>
+		</submenu>
+		<submenu>
+			<attribute name="label">Opcje</attribute>
+			<section>
+				<item>
+					<attribute name="label">Ustawienia</attribute>
+					<attribute name="action">win.settings</attribute>
+				</item>
+			</section>
+		</submenu>
+	</menu>
+</interface>

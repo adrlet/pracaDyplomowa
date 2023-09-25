@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+	<object class="GtkGrid" id="functionDataBox">
+		<property name="row-spacing">10</property>
+		<property name="column-spacing">10</property>
+		<property name="valign">GTK_ALIGN_FILL</property>
+		<property name="vexpand">TRUE</property>
+		<property name="halign">GTK_ALIGN_FILL</property>
+		<property name="hexpand">TRUE</property>
+		<style><class name="symFunctionDataBox"/></style>
+		<child>
+			<object class="GtkBox" id="asymKeyIoBox">
+				<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+				<property name="spacing">10</property>
+				<property name="hexpand">TRUE</property>
+				<style><class name="symIoBox"/></style>
+				<layout>
+					<property name="column">0</property>
+					<property name="row">0</property>
+					<property name="column-span">2</property>
+					<property name="row-span">1</property>
+				</layout>
+				<child>
+					<object class="GtkBox" id="asymKeyPubLabelBox">
+						<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+						<property name="spacing">5</property>
+						<style><class name="symInputBox"/></style>
+						<child>
+							<object class="GtkLabel" id="asymKeyPubLabel">
+								<property name="label">Klucz publiczny</property>
+								<property name="halign">GTK_ALIGN_START</property>
+								<property name="wrap">TRUE</property>
+								<property name="wrap-mode">PANGO_WRAP_WORD</property>
+								<style><class name="symInputLabel"/></style>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="GtkBox" id="asymKeyPubFileBox">
+						<property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+						<property name="spacing">5</property>
+						<style><class name="symInputFileBox"/></style>
+						<child>
+							<object class="GtkEntry" id="asymKeyPubEntry">
+								<property name="editable">FALSE</property>
+								<property name="width-request">175</property>
+								<property name="height-request">20</property>
+								<property name="tooltip-text">Ścieżka służy zarówno jako wejście jak i wyjście dla kluczy publicznych. Istotna przy sprawdzaniu kluczy RSA, EC i DH.</property>
+								<style><class name="symInputEntry"/></style>
+							</object>
+						</child>
+						<child>
+							<object class="GtkButton" id="asymKeyPubButton">
+								<property name="label">Otwórz</property>
+								<style><class name="symInputButton"/></style>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="GtkBox" id="asymKeyPrivLabelBox">
+						<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+						<property name="spacing">5</property>
+						<style><class name="symOutputBox"/></style>
+						<child>
+							<object class="GtkLabel" id="asymKeyPrivLabel">
+								<property name="label">Klucz prywatny</property>
+								<property name="halign">GTK_ALIGN_START</property>
+								<property name="wrap">TRUE</property>
+								<property name="wrap-mode">PANGO_WRAP_WORD</property>
+								<style><class name="symOutputLabel"/></style>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="GtkBox" id="asymKeyPrivFileBox">
+						<property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+						<property name="spacing">5</property>
+						<style><class name="symOutputFileBox"/></style>
+						<child>
+							<object class="GtkEntry" id="asymKeyPrivEntry">
+								<property name="editable">FALSE</property>
+								<property name="width-request">175</property>
+								<property name="height-request">20</property>
+								<property name="tooltip-text">Ścieżka służy zarówno jako wejście jak i wyjście dla kluczy prywatnych. Istotna przy sprawdzaniu kluczy RSA i EC.</property>
+								<style><class name="symOutputEntry"/></style>
+							</object>
+						</child>
+						<child>
+							<object class="GtkButton" id="asymKeyPrivButton">
+								<property name="label">Otwórz</property>
+								<style><class name="symOutputButton"/></style>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="GtkBox" id="asymKeyParamLabelBox">
+						<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+						<property name="spacing">5</property>
+						<style><class name="symOutputBox"/></style>
+						<child>
+							<object class="GtkLabel" id="asymKeyParamLabel">
+								<property name="label">Parametr</property>
+								<property name="halign">GTK_ALIGN_START</property>
+								<property name="wrap">TRUE</property>
+								<property name="wrap-mode">PANGO_WRAP_WORD</property>
+								<style><class name="symOutputLabel"/></style>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="GtkBox" id="asymKeyParamFileBox">
+						<property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+						<property name="spacing">5</property>
+						<style><class name="symOutputFileBox"/></style>
+						<child>
+							<object class="GtkEntry" id="asymKeyParamEntry">
+								<property name="editable">FALSE</property>
+								<property name="width-request">175</property>
+								<property name="height-request">20</property>
+								<property name="tooltip-text">Wejście dla parametru potrzebnego do generowania klucza lub weryfikacji. Istotna przy sprawdzaniu kluczy DH. Uwaga! Brak wsparcia dla sprawdzania parametrów i kluczy DSA.</property>
+								<style><class name="symOutputEntry"/></style>
+							</object>
+						</child>
+						<child>
+							<object class="GtkButton" id="asymKeyParamButton">
+								<property name="label">Otwórz</property>
+								<style><class name="symOutputButton"/></style>
+							</object>
+						</child>
+					</object>
+				</child>
+			</object>
+		</child>
+		<child>
+			<object class="GtkBox" id="asymKeySettingsBox">
+				<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+				<property name="spacing">5</property>
+				<style><class name="symSettingsBox"/></style>
+				<layout>
+					<property name="column">2</property>
+					<property name="row">0</property>
+					<property name="column-span">1</property>
+					<property name="row-span">1</property>
+				</layout>
+				<child>
+					<object class="GtkLabel" id="asymKeySizeLabel">
+						<property name="label">Rozmiar klucza</property>
+						<property name="halign">GTK_ALIGN_START</property>
+						<property name="wrap">TRUE</property>
+						<property name="wrap-mode">PANGO_WRAP_WORD</property>
+						<style><class name="symAlgorithmLabel"/></style>
+					</object>
+				</child>
+				<child>
+					<object class="GtkEntry" id="asymKeySizeEntry">
+						<property name="width-request">125</property>
+						<property name="height-request">20</property>
+						<property name="tooltip-text">Dotyczy tylko RSA, w przypadku pozostałych algorytmów parametr przechowuje dane o rozmiarze klucza.</property>
+						<style><class name="symOutputEntry"/></style>
+					</object>
+				</child>
+			</object>
+		</child>
+		<child>
+			<object class="GtkBox" id="asymKeyCipherBox">
+				<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+				<property name="spacing">5</property>
+				<style><class name="symSettingsBox"/></style>
+				<layout>
+					<property name="column">0</property>
+					<property name="row">2</property>
+					<property name="column-span">2</property>
+					<property name="row-span">2</property>
+				</layout>
+				<child>
+					<object class="GtkLabel" id="asymKeyPrivAlgorithmLabel">
+						<property name="label">Algorytm</property>
+						<property name="halign">GTK_ALIGN_START</property>
+						<property name="wrap">TRUE</property>
+						<property name="wrap-mode">PANGO_WRAP_WORD</property>
+						<style><class name="symAlgorithmLabel"/></style>
+					</object>
+				</child>
+				<child>
+					<object class="GtkDropDown" id="asymKeyPrivAlgorithmDropDown">
+						<property name="halign">GTK_ALIGN_START</property>
+						<property name="width-request">125</property>
+						<property name="height-request">-1</property>
+						<property name="tooltip-text">Decyduje o użytym algorytmie w przypadku szyfrowania i rozszyfrowania klucza prywatnego. Algorytmy różnia się wydajnością i poziomem bezpieczeństwa. Jeżeli nie masz swoich preferencji, używaj szybkiego i bezpiecznego AES.</property>
+						<style><class name="symAlgorithmDropDown"/></style>
+						<property name="model">
+							<object class="GtkStringList">
+							</object>
+						</property>
+					</object>
+				</child>
+				<child>
+					<object class="GtkLabel" id="asymKeyPrivBlockModeLabel">
+						<property name="label">Tryb blokowy</property>
+						<property name="halign">GTK_ALIGN_START</property>
+						<property name="wrap">TRUE</property>
+						<property name="wrap-mode">PANGO_WRAP_WORD</property>
+						<style><class name="symBlockModeLabel"/></style>
+					</object>
+				</child>
+				<child>
+					<object class="GtkDropDown" id="asymKeyPrivBlockModeDropDown">
+						<property name="halign">GTK_ALIGN_START</property>
+						<property name="width-request">125</property>
+						<property name="height-request">-1</property>
+						<property name="tooltip-text">Tryb blokowy ma wpływ na bezpieczeństwo, szczególnie przy ujawnieniu tesktu jawnego. Jeżeli nie masz swoich preferencji, używaj szybkiego CBC.</property>
+						<style><class name="symBlockModeDropDown"/></style>
+						<property name="model">
+							<object class="GtkStringList">
+							</object>
+						</property>
+					</object>
+				</child>
+				<child>
+					<object class="GtkLabel" id="asymKeyPrivKeySizeLabel">
+						<property name="label">Rozmiar klucza</property>
+						<property name="halign">GTK_ALIGN_START</property>
+						<property name="wrap">TRUE</property>
+						<property name="wrap-mode">PANGO_WRAP_WORD</property>
+						<style><class name="symKeyLabel"/></style>
+					</object>
+				</child>
+				<child>
+					<object class="GtkDropDown" id="asymKeyPrivKeySizeDropDown">
+						<property name="halign">GTK_ALIGN_START</property>
+						<property name="width-request">125</property>
+						<property name="height-request">-1</property>
+						<property name="tooltip-text">Długość klucza wpływa na podatność algorytmu na złamanie metodą brute-force. Postaraj się używać najdłuższego klucza, gdyż zwiększa to wykładniczo odporność.</property>
+						<style><class name="symKeySizeDropDown"/></style>
+						<property name="model">
+							<object class="GtkStringList">
+							</object>
+						</property>
+					</object>
+				</child>
+			</object>
+		</child>
+	</object>
+</interface>

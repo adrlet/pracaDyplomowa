@@ -1,0 +1,50 @@
+#ifndef SYMMETRIC_CIPHER_MAP_H_INCLUDED
+#define SYMMETRIC_CIPHER_MAP_H_INCLUDED
+
+#include <openssl/evp.h>
+
+#define CIPHER_ALGORITHM_ADDRESS_SPACE 16
+#define CIPHER_KEY_SIZE_ADDRESS_SPACE 8
+#define CIPHER_BLOCK_MODE_ADDRESS_SPACE 0
+
+#define CIPHER_ALGORITHM_ADDRESS_MASK 0xFF0000
+#define CIPHER_KEY_SIZE_ADDRESS_MASK 0xFF00
+#define CIPHER_BLOCK_MODE_ADDRESS_MASK 0xFF
+
+#define CIPHER_ALGORITHM_ADDRESS(x) (x << CIPHER_ALGORITHM_ADDRESS_SPACE)
+#define CIPHER_KEY_SIZE_ADDRESS(x) (x << CIPHER_KEY_SIZE_ADDRESS_SPACE)
+#define CIPHER_BLOCK_MODE_ADDRESS(x) (x << CIPHER_BLOCK_MODE_ADDRESS_SPACE)
+
+#define CIPHER_FULL_ADDRESS(algorithm, keysize, blockmode) (algorithm ^ keysize ^ blockmode)
+
+#define CIPHER_NONE CIPHER_FULL_ADDRESS(0)
+
+#define CIPHER_ALGORITHM_AES CIPHER_ALGORITHM_ADDRESS(1)
+#define CIPHER_ALGORITHM_BLOWFISH CIPHER_ALGORITHM_ADDRESS(2)
+#define CIPHER_ALGORITHM_CAMELLIA CIPHER_ALGORITHM_ADDRESS(3)
+#define CIPHER_ALGORITHM_IDEA CIPHER_ALGORITHM_ADDRESS(4)
+
+#define CIPHER_KEY_SIZE_STATIC CIPHER_KEY_SIZE_ADDRESS(0)
+#define CIPHER_KEY_SIZE_128 CIPHER_KEY_SIZE_ADDRESS(1)
+#define CIPHER_KEY_SIZE_192 CIPHER_KEY_SIZE_ADDRESS(2)
+#define CIPHER_KEY_SIZE_256 CIPHER_KEY_SIZE_ADDRESS(3)
+
+#define CIPHER_BLOCK_MODE_CBC CIPHER_BLOCK_MODE_ADDRESS(1)
+#define CIPHER_BLOCK_MODE_CFB CIPHER_BLOCK_MODE_ADDRESS(2)
+#define CIPHER_BLOCK_MODE_OFB CIPHER_BLOCK_MODE_ADDRESS(3)
+#define CIPHER_BLOCK_MODE_CTR CIPHER_BLOCK_MODE_ADDRESS(4)
+
+#define getSymmetricAlgorithmKeyLength(cipher) EVP_CIPHER_key_length(cipher)
+#define getSymmetricAlgorithmIvLength(cipher) EVP_CIPHER_iv_length(cipher)
+#define getSymmetricAlgorithmBlockSize(cipher) EVP_CIPHER_block_size(cipher)
+
+const EVP_CIPHER * get_symmetric_algorithm(int code);
+
+const char ** const symmetric_cipher_get_algorithms();
+
+const char *** const symmetric_cipher_get_blockmodes();
+
+const char *** const symmetric_cipher_get_keysize();
+
+
+#endif // SYMMETRIC_CIPHER_MAP_H_INCLUDED

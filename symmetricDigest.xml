@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+	<object class="GtkGrid" id="functionDataBox">
+		<property name="row-spacing">10</property>
+		<property name="column-spacing">10</property>
+		<property name="valign">GTK_ALIGN_FILL</property>
+		<property name="vexpand">TRUE</property>
+		<property name="halign">GTK_ALIGN_FILL</property>
+		<property name="hexpand">TRUE</property>
+		<style><class name="symFunctionDataBox"/></style>
+		<child>
+			<object class="GtkBox" id="symDigestIoBox">
+				<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+				<property name="spacing">10</property>
+				<property name="hexpand">TRUE</property>
+				<style><class name="symIoBox"/></style>
+				<layout>
+					<property name="column">0</property>
+					<property name="row">0</property>
+					<property name="column-span">2</property>
+					<property name="row-span">1</property>
+				</layout>
+				<child>
+					<object class="GtkBox" id="symDigestInputBox">
+						<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+						<property name="spacing">5</property>
+						<style><class name="symInputBox"/></style>
+						<child>
+							<object class="GtkLabel" id="symDigestInputLabel">
+								<property name="label">Wejście</property>
+								<property name="halign">GTK_ALIGN_START</property>
+								<property name="wrap">TRUE</property>
+								<property name="wrap-mode">PANGO_WRAP_WORD</property>
+								<style><class name="symInputLabel"/></style>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="GtkBox" id="symDigestInputFileBox">
+						<property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+						<property name="spacing">5</property>
+						<style><class name="symInputFileBox"/></style>
+						<child>
+							<object class="GtkEntry" id="symDigestInputEntry">
+								<property name="editable">FALSE</property>
+								<property name="width-request">175</property>
+								<property name="height-request">20</property>
+								<property name="tooltip-text">Ścieżka do pliku wejściowego operacji.</property>
+								<style><class name="symInputEntry"/></style>
+								<signal name="changed" handler="symInputEntry_cb" swapped="FALSE" object="symDigestInputDescriptionBox"></signal>
+							</object>
+						</child>
+						<child>
+							<object class="GtkButton" id="symDigestInputButton">
+								<property name="label">Otwórz</property>
+								<style><class name="symInputButton"/></style>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="GtkBox" id="symDigestOutputBox">
+						<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+						<property name="spacing">5</property>
+						<style><class name="symOutputBox"/></style>
+						<child>
+							<object class="GtkLabel" id="symDigestOutputLabel">
+								<property name="label">Wyjście</property>
+								<property name="halign">GTK_ALIGN_START</property>
+								<property name="wrap">TRUE</property>
+								<property name="wrap-mode">PANGO_WRAP_WORD</property>
+								<style><class name="symOutputLabel"/></style>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="GtkBox" id="symDigestOutputFileBox">
+						<property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+						<property name="spacing">5</property>
+						<style><class name="symOutputFileBox"/></style>
+						<child>
+							<object class="GtkEntry" id="symDigestOutputEntry">
+								<property name="editable">FALSE</property>
+								<property name="width-request">175</property>
+								<property name="height-request">20</property>
+								<property name="tooltip-text">Ścieżka i nazwa pliku wyjściowego, tzn. skrótu wiadomości.</property>
+								<style><class name="symOutputEntry"/></style>
+							</object>
+						</child>
+						<child>
+							<object class="GtkButton" id="symDigestOutputButton">
+								<property name="label">Otwórz</property>
+								<style><class name="symOutputButton"/></style>
+							</object>
+						</child>
+					</object>
+				</child>
+			</object>
+		</child>
+		<child>
+			<object class="GtkBox" id="symDigestInputDescriptionBox">
+				<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+				<property name="spacing">2</property>
+				<property name="width-request">200</property>
+				<property name="height-request">-1</property>
+				<property name="valign">GTK_ALIGN_FILL</property>
+				<style><class name="symInputDescriptionBox"/></style>
+				<layout>
+					<property name="column">2</property>
+					<property name="row">0</property>
+					<property name="column-span">1</property>
+					<property name="row-span">1</property>
+				</layout>
+				<child>
+					<object class="GtkLabel" id="symDigestInputDescriptionLabel">
+						<property name="label">Plik wejściowy</property>
+						<property name="max-width-chars">28</property>
+						<property name="wrap">TRUE</property>
+						<property name="wrap-mode">PANGO_WRAP_WORD</property>
+						<style><class name="symInputDescriptionLabel"/></style>
+					</object>
+				</child>
+				<child>
+					<object class="GtkImage" id="symDigestInputIcon">
+						<property name="icon-size">GTK_ICON_SIZE_LARGE</property>
+						<style><class name="symInputIcon"/></style>
+					</object>
+				</child>
+				<child>
+					<object class="GtkLabel" id="symDigestInputFileName">
+						<property name="max-width-chars">28</property>
+						<property name="wrap">TRUE</property>
+						<property name="wrap-mode">PANGO_WRAP_CHAR</property>
+						<style><class name="symInputFileName"/></style>
+					</object>
+				</child>
+				<child>
+					<object class="GtkLabel" id="symDigestInputFileSize">
+						<property name="max-width-chars">28</property>
+						<property name="wrap">TRUE</property>
+						<property name="wrap-mode">PANGO_WRAP_CHAR</property>
+						<style><class name="symInputFileSize"/></style>
+					</object>
+				</child>
+				<child>
+					<object class="GtkLabel" id="inputDigestFileMod">
+						<property name="max-width-chars">28</property>
+						<property name="wrap">TRUE</property>
+						<property name="wrap-mode">PANGO_WRAP_CHAR</property>
+						<style><class name="inputFileMod"/></style>
+					</object>
+				</child>
+			</object>
+		</child>
+		<child>
+			<object class="GtkBox" id="symDigestSettingsBox">
+				<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+				<property name="spacing">5</property>
+				<style><class name="symSettingsBox"/></style>
+				<layout>
+					<property name="column">0</property>
+					<property name="row">2</property>
+					<property name="column-span">2</property>
+					<property name="row-span">2</property>
+				</layout>
+				<child>
+					<object class="GtkLabel" id="symDigestAlgorithmLabel">
+						<property name="label">Algorytm</property>
+						<property name="halign">GTK_ALIGN_START</property>
+						<property name="wrap">TRUE</property>
+						<property name="wrap-mode">PANGO_WRAP_WORD</property>
+						<style><class name="symAlgorithmLabel"/></style>
+					</object>
+				</child>
+				<child>
+					<object class="GtkDropDown" id="symDigestAlgorithmDropDown">
+						<property name="halign">GTK_ALIGN_START</property>
+						<property name="width-request">125</property>
+						<property name="height-request">-1</property>
+						<property name="tooltip-text">Algorytmy skrótu są zbliżone wydajnościowo. Kazdy algorytm jest bezpieczny, jednak SHA-512 jest odporniejszy na Length extension attack, z kolei SHA-384 na kolizje.</property>
+						<style><class name="symAlgorithmDropDown"/></style>
+						<property name="model">
+							<object class="GtkStringList">
+							</object>
+						</property>
+					</object>
+				</child>
+			</object>
+		</child>
+		<child>
+			<object class="GtkBox" id="symDigestOptionsBox">
+				<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+				<property name="spacing">5</property>
+				<property name="valign">GTK_ALIGN_START</property>
+				<style><class name="symOptionsBox"/></style>
+				<layout>
+					<property name="column">2</property>
+					<property name="row">2</property>
+					<property name="column-span">1</property>
+					<property name="row-span">2</property>
+				</layout>
+				<child>
+					<object class="GtkCheckButton" id="symDigestBase64Check">
+						<property name="label">Base64</property>
+						<property name="active">TRUE</property>
+						<property name="tooltip-text">Kodowanie Base64 pozwala na wysyłanie danych przez wiele mediów jednak zwiększa rozmiar pliku o 1/3. Koduje wyjście.</property>
+						<style><class name="symBase64Check"/></style>
+					</object>
+				</child>
+			</object>
+		</child>
+	</object>
+</interface>

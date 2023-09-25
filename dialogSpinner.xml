@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+	<object class="GtkDialog" id="spinnerDialog">
+		<property name="modal">TRUE</property>
+		<property name="destroy-with-parent">TRUE</property>
+		<property name="resizable">FALSE</property>
+		<property name="width-request">240</property>
+		<property name="height-request">-1</property>
+		<style><class name="spinnerDialog"/></style>
+		<child internal-child="content_area">
+			<object class="GtkBox">
+				<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+				<style><class name="content"/></style>
+				<child>
+					<object class="GtkLabel" id="spinnerLabel">
+						<property name="label">W trakcie</property>
+						<style><class name="spinnerLabel"/></style>
+					</object>
+				</child>
+				<child>
+					<object class="GtkSpinner" id="spinner">
+						<style><class name="spiner"/></style>
+					</object>
+				</child>
+			</object>
+		</child>
+	</object>
+</interface>

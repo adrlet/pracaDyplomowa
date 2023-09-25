@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+	<object class="GtkDialog" id="progressDialog">
+		<property name="title">Postęp</property>
+		<property name="destroy-with-parent">TRUE</property>
+		<property name="resizable">FALSE</property>
+		<property name="width-request">240</property>
+		<property name="height-request">-1</property>
+		<style><class name="progressDialog"/></style>
+		<signal name="close-request" handler="gtk_widget_hide" swapped="TRUE" object="progressDialog"></signal>
+		<child internal-child="content_area">
+			<object class="GtkBox">
+				<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+				<style><class name="content"/></style>
+			</object>
+		</child>
+		<child type="action">
+			<object class="GtkButton" id="progress_button_close">
+				<property name="label">Zamknij</property>
+				<style><class name="button"/></style>
+				<signal name="clicked" handler="gtk_widget_hide" swapped="TRUE" object="progressDialog"></signal>
+			</object>
+		</child>
+	</object>
+	<object class="GtkBox" id="progressBox">
+		<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+		<property name="spacing">5</property>
+		<style><class name="contentElement"/></style>
+		<child>
+			<object class="GtkLabel" id="progressNameLabel">
+				<style><class name="nameLabel"/></style>
+			</object>
+		</child>
+		<child>
+			<object class="GtkLabel" id="progressLabel">
+				<property name="label">Postęp:</property>
+				<style><class name="label"/></style>
+			</object>
+		</child>
+		<child>
+			<object class="GtkProgressBar" id="progressBar">
+				<style><class name="bar"/></style>
+			</object>
+		</child>
+		<child>
+			<object class="GtkButton" id="specific_button">
+				<property name="label">Przerwij</property>
+				<style><class name="button"/></style>
+			</object>
+		</child>
+	</object>
+</interface>

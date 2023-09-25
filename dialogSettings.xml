@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+	<object class="GtkDialog" id="settingsDialog">
+		<property name="title">Ustawienia</property>
+		<property name="destroy-with-parent">TRUE</property>
+		<property name="resizable">FALSE</property>
+		<property name="width-request">320</property>
+		<property name="height-request">-1</property>
+		<style><class name="settingsDialog"/></style>
+		<signal name="close-request" handler="gtk_widget_hide" swapped="TRUE" object="settingsDialog"></signal>
+		<child internal-child="content_area">
+			<object class="GtkBox">
+				<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+				<property name="spacing">10</property>
+				<style><class name="content"/></style>
+				<child>
+					<object class="GtkBox" id ="settingsSaltBox">
+						<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+						<property name="spacing">5</property>
+						<style><class name="settingsSaltBox"/></style>
+						<child>
+							<object class="GtkLabel" id="settingsSaltLabel">
+								<property name="label">Długość soli</property>
+								<property name="halign">GTK_ALIGN_START</property>
+								<style><class name="label"/></style>
+							</object>
+						</child>
+						<child>
+							<object class="GtkBox" id="settingsSaltInputBox">
+								<property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+								<property name="spacing">5</property>
+								<style><class name="settingsSaltInputBox"/></style>
+								<child>
+									<object class="GtkEntry" id="settingsSaltEntry">
+										<property name="width-request">100</property>
+										<property name="height-request">20</property>
+										<style><class name="entry"/></style>
+									</object>
+								</child>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="GtkBox" id ="settingsBufferSizeBox">
+						<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+						<property name="spacing">5</property>
+						<style><class name="settingsBufferSizeBox"/></style>
+						<child>
+							<object class="GtkLabel" id="settingsBufferSizeLabel">
+								<property name="label">Rozmiar bufora I/O</property>
+								<property name="halign">GTK_ALIGN_START</property>
+								<style><class name="label"/></style>
+							</object>
+						</child>
+						<child>
+							<object class="GtkBox" id="settingsBufferSizeInputBox">
+								<property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+								<property name="spacing">5</property>
+								<style><class name="settingsBufferSizeInputBox"/></style>
+								<child>
+									<object class="GtkEntry" id="settingsBufferSizeEntry">
+										<property name="width-request">100</property>
+										<property name="height-request">20</property>
+										<style><class name="entry"/></style>
+									</object>
+								</child>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="GtkBox" id ="settingsLogsPathBox">
+						<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+						<property name="spacing">5</property>
+						<style><class name="settingsLogsPathBox"/></style>
+						<child>
+							<object class="GtkLabel" id="settingsLogsPathLabel">
+								<property name="label">Katalog logów</property>
+								<property name="halign">GTK_ALIGN_START</property>
+								<style><class name="label"/></style>
+							</object>
+						</child>
+						<child>
+							<object class="GtkBox" id="settingsLogsPathInputBox">
+								<property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+								<property name="spacing">5</property>
+								<style><class name="settingsLogsPathInputBox"/></style>
+								<child>
+									<object class="GtkEntry" id="settingsLogsPathEntry">
+										<property name="editable">FALSE</property>
+										<property name="width-request">100</property>
+										<property name="height-request">15</property>
+										<style><class name="entry"/></style>
+									</object>
+								</child>
+								<child>
+									<object class="GtkButton" id="settingsLogsPathButton">
+										<property name="label">Otwórz</property>
+										<style><class name="button"/></style>
+									</object>
+								</child>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="GtkBox" id ="settingsKeysPathBox">
+						<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+						<property name="spacing">5</property>
+						<style><class name="settingsKeysPathBox"/></style>
+						<child>
+							<object class="GtkLabel" id="settingsKeysPathLabel">
+								<property name="label">Katalog kluczy</property>
+								<property name="halign">GTK_ALIGN_START</property>
+								<style><class name="label"/></style>
+							</object>
+						</child>
+						<child>
+							<object class="GtkBox" id="settingsKeysPathInputBox">
+								<property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+								<property name="spacing">5</property>
+								<style><class name="settingsKeysPathInputBox"/></style>
+								<child>
+									<object class="GtkEntry" id="settingsKeysPathEntry">
+										<property name="editable">FALSE</property>
+										<property name="width-request">100</property>
+										<property name="height-request">20</property>
+										<style><class name="entry"/></style>
+									</object>
+								</child>
+								<child>
+									<object class="GtkButton" id="settingsKeysPathButton">
+										<property name="label">Otwórz</property>
+										<style><class name="button"/></style>
+									</object>
+								</child>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="GtkBox" id ="settingsParametersPathBox">
+						<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+						<property name="spacing">5</property>
+						<style><class name="settingsParametersPathBox"/></style>
+						<child>
+							<object class="GtkLabel" id="settingsParametersPathLabel">
+								<property name="label">Katalog parametrów</property>
+								<property name="halign">GTK_ALIGN_START</property>
+								<style><class name="label"/></style>
+							</object>
+						</child>
+						<child>
+							<object class="GtkBox" id="settingsParametersPathInputBox">
+								<property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+								<property name="spacing">5</property>
+								<style><class name="settingsParametersPathInputBox"/></style>
+								<child>
+									<object class="GtkEntry" id="settingsParametersPathEntry">
+										<property name="editable">FALSE</property>
+										<property name="width-request">100</property>
+										<property name="height-request">20</property>
+										<style><class name="entry"/></style>
+									</object>
+								</child>
+								<child>
+									<object class="GtkButton" id="settingsParametersPathButton">
+										<property name="label">Otwórz</property>
+										<style><class name="button"/></style>
+									</object>
+								</child>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="GtkBox" id ="settingsDerive_algorithmBox">
+						<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+						<property name="spacing">5</property>
+						<style><class name="settingsDerive_algorithmBox"/></style>
+						<child>
+							<object class="GtkLabel" id="settingsDerive_algorithmLabel">
+								<property name="label">Algorytm derywacji klucza</property>
+								<property name="halign">GTK_ALIGN_START</property>
+								<style><class name="label"/></style>
+							</object>
+						</child>
+						<child>
+							<object class="GtkBox" id="settingsDerive_algorithmInputBox">
+								<property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+								<property name="spacing">5</property>
+								<style><class name="settingsDerive_algorithmInputBox"/></style>
+								<child>
+									<object class="GtkDropDown" id="settingsDerive_algorithmDropDown">
+										<property name="halign">GTK_ALIGN_START</property>
+										<property name="width-request">125</property>
+										<property name="height-request">-1</property>
+										<style><class name="dropDown"/></style>
+										<property name="model">
+											<object class="GtkStringList">
+											</object>
+										</property>
+									</object>
+								</child>
+							</object>
+						</child>
+					</object>
+				</child>
+			</object>
+		</child>
+		<child type="action">
+			<object class="GtkButton" id="settings_button_ok">
+				<property name="label">Zapisz</property>
+				<style><class name="button"/></style>
+			</object>
+		</child>
+		<child type="action">
+			<object class="GtkButton" id="settings_button_cancel">
+				<property name="label">Zamknij</property>
+				<style><class name="button"/></style>
+				<signal name="clicked" handler="gtk_widget_hide" swapped="TRUE" object="settingsDialog"></signal>
+			</object>
+		</child>
+		<action-widgets>
+			<action-widget response="ok">settings_button_ok</action-widget>
+			<action-widget response="cancel" default="true">settings_button_cancel</action-widget>
+		</action-widgets>
+	</object>
+</interface>

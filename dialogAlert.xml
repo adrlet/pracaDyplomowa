@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+	<object class="GtkMessageDialog" id="alertDialog">
+		<property name="destroy-with-parent">TRUE</property>
+		<property name="resizable">FALSE</property>
+		<property name="width-request">240</property>
+		<property name="height-request">-1</property>
+		<style><class name="errorDialog"/></style>
+		<signal name="response" handler="gtk_widget_hide" swapped="TRUE" object="alertDialog"></signal>
+		<signal name="close-request" handler="gtk_widget_hide" swapped="TRUE" object="alertDialog"></signal>
+		<child internal-child="message_area">
+			<object class="GtkBox">
+				<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+				<style><class name="content"/></style>
+			</object>
+		</child>
+		<child type="action">
+			<object class="GtkButton" id="alert_button_close">
+				<property name="label">Ok</property>
+				<property name="hexpand">FALSE</property>
+				<style><class name="button"/></style>
+			</object>
+		</child>
+		<action-widgets>
+			<action-widget response="ok" default="true">alert_button_close</action-widget>
+		</action-widgets>
+	</object>
+</interface>

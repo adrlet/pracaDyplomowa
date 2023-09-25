@@ -1,0 +1,446 @@
+.passwordDialog
+{
+	border-radius: 0;
+}
+
+.passwordDialog > *
+{
+	background-color: rgb(13, 27, 42);
+	color: white;
+}
+
+.passwordDialog > .titlebar
+{
+	padding: 0;
+	margin: 0;
+	background: rgb(27, 38, 59);
+	font: 12pt Consolas;
+}
+
+.passwordDialog .button
+{
+	margin: 0 10px 10px;
+	border-radius: 0;
+	color: black;
+}
+
+.passwordDialog .content
+{
+	margin: 10px;
+}
+
+.passwordDialog .content > .filter
+{
+	margin-bottom: 5px;
+	color: red;
+}
+
+.passwordDialog .content > .label
+{
+	font-size: 10pt;
+}
+
+.passwordDialog .content > .entry
+{
+	margin-bottom: 5px;
+	border-radius: 0;
+}
+
+.progressDialog
+{
+	border-radius: 0;
+}
+
+.progressDialog > *
+{
+	background-color: rgb(13, 27, 42);
+	color: white;
+}
+
+.progressDialog > .titlebar
+{
+	padding: 0;
+	margin: 0;
+	background: rgb(27, 38, 59);
+	font: 12pt Consolas;
+	
+}
+
+.progressDialog .content
+{
+	margin: 10px;
+}
+
+.progressDialog .content > .contentElement > .label
+{
+	font-size: 10pt;
+}
+
+.progressDialog .content > .contentElement > .nameLabel
+{
+	font-size: 11pt;
+}
+
+.progressDialog .content > .contentElement > .bar > *
+{
+	border-radius: 0;
+}
+
+.progressDialog .button
+{
+	margin: 0 10px 10px;
+	border-radius: 0;
+	color: black;
+}
+
+.spinnerDialog
+{
+	border-radius: 0;
+}
+
+.spinnerDialog > *
+{
+	background-color: rgb(13, 27, 42);
+	color: white;
+}
+
+.spinnerDialog > .titlebar
+{
+	border-radius: 0;
+	background: rgb(27, 38, 59);
+	padding: 0;
+	margin: 0;
+	font: 12pt Consolas;
+}
+
+.spinnerDialog .content
+{
+	margin: 10px;
+}
+
+.spinnerDialog .content > .label
+{
+	font-size: 11pt;
+}
+
+.spinnerDialog .content > .spiner .spinner
+{
+	margin: 10px;
+}
+
+.spinnerDialog .button
+{
+	margin: 0 10px 10px;
+	border-radius: 0;
+	color: black;
+}
+
+.alertDialog
+{
+	border-radius: 0;
+}
+
+.alertDialog > *
+{
+	background-color: rgb(13, 27, 42);
+	color: white;
+}
+
+.alertDialog > .titlebar
+{
+	border-radius: 0;
+	background: rgb(27, 38, 59);
+	padding: 0;
+	margin: 0;
+	font: 12pt Consolas;
+}
+
+.alertDialog .content
+{
+	margin: 10px;
+}
+
+.alertDialog .button
+{
+	margin: 0 10px 10px;
+	border-radius: 0;
+	color: black;
+}
+
+.errorDialog
+{
+	border-radius: 0;
+}
+
+.errorDialog > *
+{
+	background-color: rgb(13, 27, 42);
+	color: white;
+}
+
+.errorDialog > .titlebar
+{
+	border-radius: 0;
+	background: rgb(27, 38, 59);
+	padding: 0;
+	margin: 0;
+	font: 12pt Consolas;
+}
+
+.errorDialog .content
+{
+	margin: 10px;
+}
+
+.errorDialog .button
+{
+	margin: 0 10px 10px;
+	border-radius: 0;
+	color: black;
+}
+
+.jobsDialog
+{
+	border-radius: 0;
+}
+
+.jobsDialog > *
+{
+	background-color: rgb(13, 27, 42);
+	color: white;
+}
+
+.jobsDialog > .titlebar
+{
+	border-radius: 0;
+	background: rgb(27, 38, 59);
+	padding: 0;
+	margin: 0;
+	font: 12pt Consolas;
+}
+
+.jobsDialog .content
+{
+	margin: 10px;
+}
+
+.jobsDialog .button
+{
+	margin: 0 10px 10px;
+	border-radius: 0;
+	color: black;
+}
+
+.settingsDialog
+{
+	border-radius: 0;
+}
+
+.settingsDialog > *
+{
+	background-color: rgb(13, 27, 42);
+	color: white;
+}
+
+.settingsDialog > .titlebar
+{
+	border-radius: 0;
+	background: rgb(27, 38, 59);
+	padding: 0;
+	margin: 0;
+	font: 12pt Consolas;
+}
+
+.settingsDialog .content
+{
+	margin: 10px;
+}
+
+.settingsDialog .button
+{
+	margin: 0 10px 10px 0;
+	border-radius: 0;
+	color: black;
+}
+
+.settingsDialog .content .label
+{
+	font-size: 9pt;
+}
+
+.settingsDialog .content .entry
+{
+	border-radius: 0;
+}
+
+.settingsDialog .content .button
+{
+	margin: 0px;
+}
+
+.settingsDialog .content .dropDown *
+{
+	border-radius: 0;
+}
+
+.mainWindow
+{
+	border-radius: 0;
+}
+
+.mainWindow > *
+{
+	background-color: rgb(21, 32, 50); 
+	color: white;
+}
+
+.mainWindow > .titlebar
+{
+	background: rgb(27, 38, 59);
+	color: white;
+	padding: 0;
+	margin: 0;
+}
+
+.mainWindow .menu
+{
+	background-color: rgb(21, 32, 50); 
+}
+
+.mainWindow .menu > *
+{
+	border-radius: 0;
+	background-color: rgb(21, 32, 50); 
+	color: white;
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > header > tabs 
+{ 
+	background-color: rgb(29, 45, 68);
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > header > tabs > tab > *
+{ 
+	border-bottom: solid white 1px;
+	color: white;
+	font: 11pt Consolas;
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > header > tabs > tab:hover
+{
+	background-color: rgb(132,132,132);
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > header > tabs > tab:active
+{
+	background-color: rgb(172,172,172);
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > header > tabs > arrow
+{
+	background-color: rgb(21, 36, 55);
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > header > tabs > arrow
+{
+	color: rgb(160,160,160);
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > header > tabs > arrow:active
+{
+	color: rgb(255,255,255);
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > stack > .functionSectionBox > .functionalitiesBox > .functionSectionBoxScroll
+{
+	background-color: rgb(13, 27, 42);
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > stack > .functionSectionBox > .functionalitiesBox > .functionSectionBoxScroll > *
+{
+	background-color: rgb(13, 27, 42);
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > stack > .functionSectionBox > .functionalitiesBox > .functionSectionBoxScroll .functionsButton
+{
+	border: 0;
+	border-radius: 0;
+	background-image: none;
+	color: white;
+	font: 11pt Consolas;
+	border-right: solid white 1px;
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > stack > .functionSectionBox > .functionalitiesBox > .functionSectionBoxScroll .functionsButton:hover
+{
+	background-color: rgb(80,80,80);
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > stack > .functionSectionBox > .functionalitiesBox > .functionSectionBoxScroll .functionsButton:active
+{
+	background-color: rgb(96,96,96);
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > stack > .functionSectionBox > .symFunctionDataBox
+{
+	background-color: rgb(21, 32, 50); 
+	padding: 10px;
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > stack > .functionSectionBox > .symFunctionDataBox > *
+{
+	border: 1px solid white;
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > stack > .functionSectionBox > .symFunctionDataBox > .symIoBox > *
+{
+	color: white;
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > stack > .functionSectionBox > .symFunctionDataBox > .symIoBox *
+{
+	border-radius: 0;
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > stack > .functionSectionBox > .symFunctionDataBox > .symInputDescriptionBox
+{
+	color:white;
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > stack > .functionSectionBox > .symFunctionDataBox > .symSettingsBox > *
+{
+	color: white;
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > stack > .functionSectionBox > .symFunctionDataBox > .symSettingsBox *
+{
+	border-radius: 0;
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > stack > .functionSectionBox > .symFunctionDataBox > .symOptionsBox > *
+{
+	color: white;
+}
+
+.mainWindow > .programBox > .functionsGroupNotepad > stack > .functionSectionBox > .symFunctionDataBox > .symOptionsBox *
+{
+	border-radius: 0;
+}
+
+.symInputFileDialog, .symOutputFileDialog
+{
+	border-radius: 0;
+}
+
+.symInputFileDialog > .titlebar, .symOutputFileDialog > .titlebar
+{
+	background: rgb(27, 38, 59);
+	color: white;
+	padding: 0;
+	margin: 0;
+}
+
+.symOutputEntry *
+{
+	color: black;
+}

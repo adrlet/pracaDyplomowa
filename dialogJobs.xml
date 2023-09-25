@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+	<object class="GtkDialog" id="jobsDialog">
+		<property name="title">Raporty operacji</property>
+		<property name="destroy-with-parent">TRUE</property>
+		<property name="resizable">FALSE</property>
+		<property name="width-request">480</property>
+		<property name="height-request">360</property>
+		<style><class name="jobsDialog"/></style>
+		<signal name="close-request" handler="gtk_widget_hide" swapped="TRUE" object="jobsDialog"></signal>
+		<child internal-child="content_area">
+			<object class="GtkBox">
+				<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+				<style><class name="content"/></style>
+				<child>
+					<object class="GtkScrolledWindow" id="errorScrolledWindow">
+						<style><class name="errorScrolledWindow"/></style>
+						<property name="vexpand">TRUE</property>
+						<child>
+							<object class="GtkColumnView" id="jobsColumnView">
+								<property name="model">
+									<object class="GtkSingleSelection" id="singleselection">
+										<property name="model">
+											<object class="GtkSortListModel" id="sortlist">
+												<binding name="sorter">
+													<lookup name="sorter">jobsColumnView</lookup>
+												</binding>
+											</object>
+										</property>
+									</object>
+								</property>
+								<child>
+									<object class="GtkColumnViewColumn" id="jobsDateColumn">
+										<property name="title">Data</property>
+										<property name="factory">
+											<object class="GtkBuilderListItemFactory">
+												<property name="bytes"><![CDATA[
+			<?xml version="1.0" encoding="UTF-8"?>
+			<interface>
+				<template class="GtkListItem">
+					<property name="child">
+						<object class="GtkLabel">
+							<binding name="label">
+								<closure type="gchararray" function="get_jobs_date_time_factory">
+									<lookup name="item">GtkListItem</lookup>
+								</closure>
+							</binding>
+						</object>
+					</property>
+				</template>
+			</interface>
+												]]></property>
+											</object>
+										</property>
+										<property name="sorter">
+											<object class="GtkStringSorter" id="sorter_date_time">
+												<property name="expression">
+													<closure type="gchararray" function="get_jobs_date_time">
+													</closure>
+												</property>
+											</object>
+										</property>
+									</object>
+								</child>
+								<child>
+									<object class="GtkColumnViewColumn" id="jobsOperationColumn">
+										<property name="title">Operacja</property>
+										<property name="factory">
+											<object class="GtkBuilderListItemFactory">
+												<property name="bytes"><![CDATA[
+			<?xml version="1.0" encoding="UTF-8"?>
+			<interface>
+				<template class="GtkListItem">
+					<property name="child">
+						<object class="GtkLabel">
+							<binding name="label">
+								<closure type="gchararray" function="get_jobs_operation_factory">
+									<lookup name="item">GtkListItem</lookup>
+								</closure>
+							</binding>
+						</object>
+					</property>
+				</template>
+			</interface>
+												]]></property>
+											</object>
+										</property>
+										<property name="sorter">
+											<object class="GtkStringSorter" id="sorter_operation">
+												<property name="expression">
+													<closure type="gchararray" function="get_jobs_operation">
+													</closure>
+												</property>
+											</object>
+										</property>
+									</object>
+								</child>
+								<child>
+									<object class="GtkColumnViewColumn" id="jobsResultColumn">
+										<property name="title">Wynik</property>
+										<property name="expand">TRUE</property>
+										<property name="factory">
+											<object class="GtkBuilderListItemFactory">
+												<property name="bytes"><![CDATA[
+			<?xml version="1.0" encoding="UTF-8"?>
+			<interface>
+				<template class="GtkListItem">
+					<property name="child">
+						<object class="GtkLabel">
+							<binding name="label">
+								<closure type="gchararray" function="get_jobs_result_factory">
+									<lookup name="item">GtkListItem</lookup>
+								</closure>
+							</binding>
+						</object>
+					</property>
+				</template>
+			</interface>
+												]]></property>
+											</object>
+										</property>
+										<property name="sorter">
+											<object class="GtkStringSorter" id="sorter_result">
+												<property name="expression">
+													<closure type="gchararray" function="get_jobs_result">
+													</closure>
+												</property>
+											</object>
+										</property>
+									</object>
+								</child>
+							</object>
+						</child>
+					</object>
+				</child>
+			</object>
+		</child>
+		<child type="action">
+			<object class="GtkButton" id="jobs_button_close">
+				<property name="label">Zamknij</property>
+				<style><class name="button"/></style>
+				<signal name="clicked" handler="gtk_widget_hide" swapped="TRUE" object="jobsDialog"></signal>
+			</object>
+		</child>
+	</object>
+</interface>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+	<object class="GtkDialog" id="errorDialog">
+		<property name="title">Raporty błędów</property>
+		<property name="destroy-with-parent">TRUE</property>
+		<property name="resizable">FALSE</property>
+		<property name="width-request">640</property>
+		<property name="height-request">480</property>
+		<style><class name="errorDialog"/></style>
+		<signal name="close-request" handler="gtk_widget_hide" swapped="TRUE" object="errorDialog"></signal>
+		<child internal-child="content_area">
+			<object class="GtkBox">
+				<property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+				<style><class name="content"/></style>
+				<child>
+					<object class="GtkScrolledWindow" id="errorScrolledWindow">
+						<style><class name="errorScrolledWindow"/></style>
+						<property name="vexpand">TRUE</property>
+						<child>
+							<object class="GtkColumnView" id="errorColumnView">
+								<property name="model">
+									<object class="GtkSingleSelection" id="singleselection">
+										<property name="model">
+											<object class="GtkSortListModel" id="sortlist">
+												<binding name="sorter">
+													<lookup name="sorter">errorColumnView</lookup>
+												</binding>
+											</object>
+										</property>
+									</object>
+								</property>
+								<child>
+									<object class="GtkColumnViewColumn" id="errorDateColumn">
+										<property name="title">Data</property>
+										<property name="factory">
+											<object class="GtkBuilderListItemFactory">
+												<property name="bytes"><![CDATA[
+			<?xml version="1.0" encoding="UTF-8"?>
+			<interface>
+				<template class="GtkListItem">
+					<property name="child">
+						<object class="GtkLabel">
+							<binding name="label">
+								<closure type="gchararray" function="get_error_date_time_factory">
+									<lookup name="item">GtkListItem</lookup>
+								</closure>
+							</binding>
+						</object>
+					</property>
+				</template>
+			</interface>
+												]]></property>
+											</object>
+										</property>
+										<property name="sorter">
+											<object class="GtkStringSorter" id="sorter_date_time">
+												<property name="expression">
+													<closure type="gchararray" function="get_error_date_time">
+													</closure>
+												</property>
+											</object>
+										</property>
+									</object>
+								</child>
+								<child>
+									<object class="GtkColumnViewColumn" id="errorFunctionColumn">
+										<property name="title">Funkcja</property>
+										<property name="factory">
+											<object class="GtkBuilderListItemFactory">
+												<property name="bytes"><![CDATA[
+			<?xml version="1.0" encoding="UTF-8"?>
+			<interface>
+				<template class="GtkListItem">
+					<property name="child">
+						<object class="GtkLabel">
+							<binding name="label">
+								<closure type="gchararray" function="get_error_function_factory">
+									<lookup name="item">GtkListItem</lookup>
+								</closure>
+							</binding>
+						</object>
+					</property>
+				</template>
+			</interface>
+												]]></property>
+											</object>
+										</property>
+										<property name="sorter">
+											<object class="GtkStringSorter" id="sorter_error_function">
+												<property name="expression">
+													<closure type="gchararray" function="get_error_function">
+													</closure>
+												</property>
+											</object>
+										</property>
+									</object>
+								</child>
+								<child>
+									<object class="GtkColumnViewColumn" id="errorTypeColumn">
+										<property name="title">Typ</property>
+										<property name="factory">
+											<object class="GtkBuilderListItemFactory">
+												<property name="bytes"><![CDATA[
+			<?xml version="1.0" encoding="UTF-8"?>
+			<interface>
+				<template class="GtkListItem">
+					<property name="child">
+						<object class="GtkLabel">
+							<binding name="label">
+								<closure type="gchararray" function="get_error_type_factory">
+									<lookup name="item">GtkListItem</lookup>
+								</closure>
+							</binding>
+						</object>
+					</property>
+				</template>
+			</interface>
+												]]></property>
+											</object>
+										</property>
+										<property name="sorter">
+											<object class="GtkStringSorter" id="sorter_error_type">
+												<property name="expression">
+													<closure type="gchararray" function="get_error_type">
+													</closure>
+												</property>
+											</object>
+										</property>
+									</object>
+								</child>
+								<child>
+									<object class="GtkColumnViewColumn" id="errorDescColumn">
+										<property name="title">Opis</property>
+										<property name="factory">
+											<object class="GtkBuilderListItemFactory">
+												<property name="bytes"><![CDATA[
+			<?xml version="1.0" encoding="UTF-8"?>
+			<interface>
+				<template class="GtkListItem">
+					<property name="child">
+						<object class="GtkLabel">
+							<binding name="label">
+								<closure type="gchararray" function="get_error_desc_factory">
+									<lookup name="item">GtkListItem</lookup>
+								</closure>
+							</binding>
+						</object>
+					</property>
+				</template>
+			</interface>
+												]]></property>
+											</object>
+										</property>
+										<property name="sorter">
+											<object class="GtkStringSorter" id="sorter_error_desc">
+												<property name="expression">
+													<closure type="gchararray" function="get_error_desc">
+													</closure>
+												</property>
+											</object>
+										</property>
+									</object>
+								</child>
+								<child>
+									<object class="GtkColumnViewColumn" id="errorOpensslColumn">
+										<property name="title">Opis OpenSSL</property>
+										<property name="expand">TRUE</property>
+										<property name="factory">
+											<object class="GtkBuilderListItemFactory">
+												<property name="bytes"><![CDATA[
+			<?xml version="1.0" encoding="UTF-8"?>
+			<interface>
+				<template class="GtkListItem">
+					<property name="child">
+						<object class="GtkLabel">
+							<binding name="label">
+								<closure type="gchararray" function="get_error_openssl_factory">
+									<lookup name="item">GtkListItem</lookup>
+								</closure>
+							</binding>
+						</object>
+					</property>
+				</template>
+			</interface>
+												]]></property>
+											</object>
+										</property>
+										<property name="sorter">
+											<object class="GtkStringSorter" id="sorter_openssl">
+												<property name="expression">
+													<closure type="gchararray" function="get_error_openssl">
+													</closure>
+												</property>
+											</object>
+										</property>
+									</object>
+								</child>
+							</object>
+						</child>
+					</object>
+				</child>
+			</object>
+		</child>
+		<child type="action">
+			<object class="GtkButton" id="error_button_close">
+				<property name="label">Zamknij</property>
+				<style><class name="button"/></style>
+				<signal name="clicked" handler="gtk_widget_hide" swapped="TRUE" object="errorDialog"></signal>
+			</object>
+		</child>
+	</object>
+</interface>
